@@ -1,16 +1,49 @@
+
+body {
+    --text-color: rgb(26, 26, 26);
+    --bkg-color: #ffff;
+    --btn-txt-color: white;
+    --btn-bg-color: gray;
+    --header-color: #b50300;
+    --h1-color: #eeee;
+    --card-bg-color: #ffff;
+}
+
+body.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #252222;
+    --btn-txt-color: black;
+    --btn-bg-color: white;
+    --header-color: #3f0100;
+    --card-bg-color:#dbb4ad;
+}
+
 *{
     padding: 0;
     margin: 0;
 }
-
-body {
+body{
     font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bkg-color);
 }
 
 header {
     padding: 10px 0px;
-    background-color: #b50300;
+    background-color: var(--header-color);
 }
 header h1 {
-    color: #f7f0f0;
+    color: var(--h1-color);
+}
+.btn {
+    background-color: var(--btn-bg-color);
+    color: var(--btn-txt-color);
+    padding: 1%;
+}
+.card {
+    background-color: var(--card-bg-color);
+}
+.list-group-item{
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
 }

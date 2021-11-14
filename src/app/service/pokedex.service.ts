@@ -8,8 +8,8 @@ export class PokedexService {
 
   constructor( private httpClient: HttpClient) { }
 
-  getPokemons() {
-    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon?limit=20");
+  getPokemons(api:string) {
+    return this.httpClient.get(api);
   }
 
   getDetails(pokemon: string) {
