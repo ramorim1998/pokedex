@@ -1,0 +1,20 @@
+<div class="row">
+
+    <div class="poke-table col-md-3 col-xs-12" *ngFor="let item of pokemons">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{item.sprites.front_default}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{item.name | uppercase}}</h5>
+                <p class="card-text"><b>Type: </b>{{item.types[0].type.name}}</p>
+            </div>
+            <ul class="list-group list-group-flush" *ngFor="let stats of item.stats">
+                <li class="list-group-item"><b>{{stats.stat.name | uppercase}}</b>: {{stats.base_stat}}</li>
+                
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">More details</a>
+            </div>
+        </div>
+    </div>
+
+</div>
