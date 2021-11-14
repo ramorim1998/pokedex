@@ -7,3 +7,10 @@
 footer{
     text-align: end;
 }
+.card-link{
+    color: #daa520;
+    text-decoration: none;
+}
+svg{
+    color: #daa520;
+}
