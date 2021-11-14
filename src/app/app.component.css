@@ -1,21 +1,21 @@
 
 body {
     --text-color: rgb(26, 26, 26);
-    --bkg-color: #ffff;
+    --bkg-color: #fcd3d1;
     --btn-txt-color: white;
     --btn-bg-color: gray;
-    --header-color: #b50300;
+    --header-color: #750200;
     --h1-color: #eeee;
-    --card-bg-color: #ffff;
+    --card-bg-color: rgba(255, 255, 255, 0.705);
 }
 
 body.dark-theme {
-    --text-color: #eee;
-    --bkg-color: #252222;
+    --text-color: #343434;
+    --bkg-color: black;
     --btn-txt-color: black;
     --btn-bg-color: white;
     --header-color: #3f0100;
-    --card-bg-color:#dbb4ad;
+    --card-bg-color:#eca4a4a4;
 }
 
 *{
