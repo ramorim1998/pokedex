@@ -9,14 +9,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   light = true;
   title = 'pokedex';
+
+/**
+ * @method toggle
+ * metodo de controle de tema, seja dark ou ligh theme
+ */
+
   toggle(): void {
-    if(this.light === true){
-      document.body.className = "dark-theme";
-    }
-    else{
-      document.body.className = "";
-    }
-    console.log(document.body.className)
     this.light = !this.light;
   }
 }

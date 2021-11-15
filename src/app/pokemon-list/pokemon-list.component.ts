@@ -20,36 +20,36 @@ export class PokemonListComponent implements OnInit {
   ngOnInit(): void {
     this.getPokemons()
   }
-
+/**
+ * @method getPokemons
+ * 
+ * metodo criado para montar a lista de pokemons, com alguns detalhes sobre eles
+ */
   getPokemons() {
     this.pokeService.getPokemons(this.api)
-    .subscribe((pokemons: any) => {
-      this.next = pokemons.next;
-      this.previous = pokemons.previous;
-      this.totalPokes = pokemons.count;
-      pokemons.results.forEach((pokemon: any) => {
-        this.pokeService.getDetails(pokemon.name)
-        .subscribe((response: any)=> {
-          response.shiny = false;
-          this.pokemons.push(response);
-          console.log(this.pokemons)
-        })
-      });
-    })
+      .subscribe((pokemons: any) => {
+        let{next, count, previous, results} = pokemons;
+        this.next = next;
+        this.previous = previous;
+        this.totalPokes = count;
+        results.forEach((pokemon: any) => {
+          this.pokeService.getDetails(pokemon.name)
+            .subscribe((response: any) => {
+              response.shiny = false;
+              this.pokemons.push(response);
+            })
+        });
+      })
   }
-  shinyVersion(item: string){
-    
-  }
-  nextPage(){
-    if(this.next)
+  /**
+   * @method handlePage
+   * @param page 
+   * 
+   * metodo criado para fazer a transição de paginas, indo ou voltando
+   */
+  handlePage(page: string) {
     this.pokemons = []
-    this.api = this.next;
-    this.getPokemons();
-  }
-  previousPage(){
-    if(this.previous)
-    this.pokemons = []
-    this.api = this.previous
+    page === "next" ? this.api = this.next : this.api = this.previous
     this.getPokemons();
   }
 
