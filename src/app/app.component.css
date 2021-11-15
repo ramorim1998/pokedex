@@ -26,6 +26,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-color);
     background-color: var(--bkg-color);
+    width: 100%;
 }
 
 header {

@@ -29,6 +29,10 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-color);
     background-color: var(--bkg-color);
+    max-width: auto;
+    margin: 0px;
+    padding: auto;
+    overflow-x: hidden;
 }
 
 header {

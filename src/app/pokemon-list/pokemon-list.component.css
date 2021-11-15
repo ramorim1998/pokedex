@@ -14,3 +14,16 @@ footer{
 svg{
     color: #daa520;
 }
+
+nav{
+    margin-left: 85%;
+}
+.page-link{
+        background-color: #dbb4ad;
+        color: black;
+
+}
+.shiny{
+    cursor: pointer;
+    background-color: #fff;
+}

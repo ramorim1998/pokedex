@@ -15,6 +15,7 @@ export class PokemonListComponent implements OnInit {
   totalPokes: number = 0;
   next: string = '';
   previous: string = '';
+  loading: boolean = false;
   constructor(private pokeService: PokedexService) { }
 
   ngOnInit(): void {
@@ -26,6 +27,7 @@ export class PokemonListComponent implements OnInit {
  * metodo criado para montar a lista de pokemons, com alguns detalhes sobre eles
  */
   getPokemons() {
+    this.loading = true
     this.pokeService.getPokemons(this.api)
       .subscribe((pokemons: any) => {
         let{next, count, previous, results} = pokemons;
@@ -36,11 +38,25 @@ export class PokemonListComponent implements OnInit {
           this.pokeService.getDetails(pokemon.name)
             .subscribe((response: any) => {
               response.shiny = false;
+              response.load = false;
               this.pokemons.push(response);
             })
         });
+        this.loading = false
+
       })
   }
+
+  load(item: any) {
+    item.load = true;
+    setTimeout(() => {
+      item.shiny = !item.shiny;
+      item.load = false;
+    }, 1000);
+  }
+
+
+
   /**
    * @method handlePage
    * @param page 
